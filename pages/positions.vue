@@ -1,7 +1,8 @@
 <template>
   <div>
-
-    <MainPage />
+    Positions test
+    <AxiosTest />
+    <!-- <Tutorial/> -->
   </div>
 </template>
 
