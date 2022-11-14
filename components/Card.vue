@@ -16,34 +16,30 @@
     <div>
       <h2 class="text-gray-800 text-3xl font-semibold">{{ title }}</h2>
       <p class="mt-2 text-gray-600">
-        <span v-if="open == true">
+        <div v-if="open == true">
           {{ description }}
           <div>
-            <h1>rate: $0000</h1>
-            <h2>Employment type: part time</h2>
-            <h3>Hours Per Week: 35</h3>
-            <h3>Duration</h3>
-            <h4>Location</h4>
-            <h5>Hourly Rate</h5>
+            <h1>rate: ${{rate}}</h1>
+            <h2>Employment type: {{employment}}</h2>
+            <h3>Hours Per Week: {{hours}}</h3>
+            <h3>Seniority: {{seniority}}</h3>
+            <h4>Location: {{location}}</h4>
             <h6>Skills:</h6>
             <ul>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
+                <li v-for="(item, index) in skills">{{item.skill.name}}</li>
             </ul>
           </div>
-        </span>
+        </div>
         <span v-else>
           {{ subString }}
         </span>
       </p>
     </div>
 
-    <!-- <button v-if="open" @click="open = false">Close</button>
-    <button v-else @click="open = true">See Description</button> -->
+
 
     <div class="flex justify-end mt-4">
-      <!-- <a href="#" class="text-xl font-medium text-indigo-500">See more</a> -->
+
       <button
         class="text-xl font-medium text-indigo-500"
         v-if="open"
@@ -65,7 +61,7 @@
 <script>
 export default {
   name: "card",
-  props: ["title", "description", "company"],
+  props: ["title", "description", "company", 'rate', 'employment', 'hours', 'seniority', 'location', 'skills'],
   data() {
     return {
       open: false,

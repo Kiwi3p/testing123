@@ -15,17 +15,26 @@
         {{ entry }}
       </button>
     </div>
-    <ul class="userWrap">
-      <li v-for="(entry, index) in users" :key="index" class="user">
-        <h2 class="title">{{ entry.name }}</h2>
-        <span class="language"
-          >Primary Language: <strong>{{ entry.Company }}</strong></span
-        >
-      </li>
-    </ul>
-    <ul>
-      <li v-for="(entry, index) in users">{{ entry.Company }}</li>
-    </ul>
+    <div class="grid grid-cols-3 gap-3">
+      <div
+        v-for="(entry, index) in users"
+        :key="index"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
+        <Card
+          :title="entry.Title"
+          :description="entry.Description"
+          :company="entry.Company"
+          :rate="entry.Max_Hourly_Rate"
+          :employment="entry.Employment_Type"
+          :hours="entry.Hours_Per_Week"
+          :seniority="entry.Seniority"
+          :location="entry.Location"
+          :skills="entry.skills"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
