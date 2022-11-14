@@ -32,7 +32,7 @@ export default {
     '~/plugins/aos.client.js',
   ],
 
-  pageTransition: "fade",
+  pageTransition: "page",
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

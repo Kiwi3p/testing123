@@ -15,7 +15,7 @@
     </div>
     <div>
       <h2 class="text-gray-800 text-3xl font-semibold">{{ title }}</h2>
-      <p class="mt-2 text-gray-600">
+      <div class="mt-2 text-gray-600">
         <div v-if="open == true">
           
           <Profile :rate="rate" :description="description" :employment="employment" :hours="hours" :seniority="seniority" :location="location" :email="email" :skills="skills"/>
@@ -23,7 +23,7 @@
         <span v-else>
           {{ subString }}
         </span>
-      </p>
+    </div>
     </div>
 
 

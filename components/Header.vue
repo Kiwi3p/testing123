@@ -9,14 +9,14 @@
             class="hidden lg:block flex lg:min-w-0 lg:flex-1"
             aria-label="Global"
           >
-            <a href="/" class="-m-1.5 p-1.5">
+            <NuxtLink to="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
               <img
                 class="h-8"
                 src="https://uploads-ssl.webflow.com/631b8bcafde15c05a06e9106/636c1a2c1b886a4ca4f3f2c6_lawtrades_logo_with_type_black.svg"
                 alt=""
               />
-            </a>
+            </NuxtLink>
           </div>
 
           <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
@@ -45,10 +45,10 @@
                 </a>
               </div>
               <div class="flex">
-                <a
-                  href="#"
+                <NuxtLink
+                  to="/positions"
                   class="-mx-3 block rounded-lg py-2.5 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
-                  >Positions</a
+                  >Positions</NuxtLink
                 >
               </div>
             </div>
