@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="flex flex-col items-center p-10">
+    <div class="flex flex-row self-start px-10">
       <button
         v-for="(entry, index) in filterList"
         :item="entry"
@@ -15,7 +15,7 @@
         {{ entry }}
       </button>
     </div>
-    <div class="grid grid-cols-3 gap-3">
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-8">
       <div
         v-for="(entry, index) in users"
         :key="index"
@@ -32,6 +32,7 @@
           :seniority="entry.Seniority"
           :location="entry.Location"
           :skills="entry.skills"
+          :email="entry.Client_email"
         />
       </div>
     </div>
@@ -138,11 +139,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 button {
-  background: #74b6cc;
+  /* background: #74b6cc;
   border: none;
-  color: #fff;
+  color: #fff; */
   padding: 10px;
   margin: 5px;
+  @apply inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700;
 }
 button.active {
   background: #0089ba;

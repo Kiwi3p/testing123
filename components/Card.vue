@@ -17,18 +17,8 @@
       <h2 class="text-gray-800 text-3xl font-semibold">{{ title }}</h2>
       <p class="mt-2 text-gray-600">
         <div v-if="open == true">
-          {{ description }}
-          <div>
-            <h1>rate: ${{rate}}</h1>
-            <h2>Employment type: {{employment}}</h2>
-            <h3>Hours Per Week: {{hours}}</h3>
-            <h3>Seniority: {{seniority}}</h3>
-            <h4>Location: {{location}}</h4>
-            <h6>Skills:</h6>
-            <ul>
-                <li v-for="(item, index) in skills">{{item.skill.name}}</li>
-            </ul>
-          </div>
+          
+          <Profile :rate="rate" :description="description" :employment="employment" :hours="hours" :seniority="seniority" :location="location" :email="email" :skills="skills"/>
         </div>
         <span v-else>
           {{ subString }}
@@ -41,14 +31,14 @@
     <div class="flex justify-end mt-4">
 
       <button
-        class="text-xl font-medium text-indigo-500"
+        class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
         v-if="open"
         @click="open = false"
       >
         Close
       </button>
       <button
-        class="text-xl font-medium text-indigo-500"
+        class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
         v-else
         @click="open = true"
       >
@@ -61,7 +51,7 @@
 <script>
 export default {
   name: "card",
-  props: ["title", "description", "company", 'rate', 'employment', 'hours', 'seniority', 'location', 'skills'],
+  props: ["title", "description", "company", 'rate', 'employment', 'hours', 'seniority', 'location', 'skills', 'email'],
   data() {
     return {
       open: false,
