@@ -23,12 +23,16 @@ export default {
   css: [
     'ant-design-vue/dist/antd.css',
     '@/css/main.css',
+    '@/css/main.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/antd-ui'
+    '@/plugins/antd-ui',
+    '~/plugins/aos.client.js',
   ],
+
+  pageTransition: "fade",
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

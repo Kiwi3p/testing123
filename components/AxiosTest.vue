@@ -1,10 +1,11 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div class="grid grid-cols-3 gap-3">
     <!-- {{ info.data.title }} -->
-    <li v-for="(item, index) in info">
-      {{ item.Company }}
-    </li>
+    
+    <div class="" v-for="(item, index) in info" data-aos="fade-in" data-aos-duration="1000">
+      <Card :title="item.Title" :description="item.Description" :company="item.Company" />
+    </div>
   </div>
 </template>
 
